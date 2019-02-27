@@ -691,7 +691,7 @@ def main(unused_argv):
             'std_dev': 0.05,
             'sentence_len': 50,
             'n_filters': 100,
-            'batch_size': 50,
+            'batch_size': 2,
             'trunc_norm_init_std': hps_discriminator.trunc_norm_init_std,
             'rand_unif_init_mag': hps_discriminator.rand_unif_init_mag}
 
