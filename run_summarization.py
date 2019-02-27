@@ -721,27 +721,6 @@ def main(unused_argv):
         # Load pre-trained emotionalization module
         util.load_ckpt(saver_sen, sess_sen, ckpt_dir="train-sentimentor")
 
-        # Configuration for CNN classifier
-        config = {
-            'n_epochs': 5,
-            'kernel_sizes': [3, 4, 5],
-            'dropout_rate': 0.5,
-            'val_split': 0.4,
-            'edim': 300,
-            'n_words': None,  # Leave as none
-            'std_dev': 0.05,
-            'sentence_len': 50,
-            'n_filters': 100,
-            'batch_size': 50}
-        config['n_words'] = 50000
-
-        # CNN setup
-        # for evaluating sentiment confidence quantitatively
-        # training 단계에서는 필요 없는 듯.
-        # cla_cnn_batcher = CNN_ClaBatcher(hps_discriminator, vocab)
-        # cnn_classifier = CNN(config)
-        # sess_cnn_cls, saver_cnn_cls, train_dir_cnn_cls = setup_training_cnnclassifier(cnn_classifier)
-
         # Generator setup
         model = Generator(hps_generator, vocab)
         batcher = GenBatcher(vocab, hps_generator)
