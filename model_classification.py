@@ -147,8 +147,9 @@ class Classification(object):
             with tf.variable_scope('embedding'):
                 embedding = tf.get_variable('embedding', [vsize, hps.emb_dim], dtype=tf.float32,
                                             initializer=self.trunc_norm_init)
+                # tensor with shape (batch_size, max_enc_steps, emb_size)
                 emb_enc_inputs = tf.nn.embedding_lookup(embedding,
-                                                        self._enc_batch)  # tensor with shape (batch_size, max_enc_steps, emb_size)
+                                                        self._enc_batch)
                 self.emb_enc_inputs = emb_enc_inputs
 
             # Add the encoder.

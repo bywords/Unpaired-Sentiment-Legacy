@@ -693,7 +693,8 @@ def main(unused_argv):
             'n_filters': 100,
             'batch_size': 2,
             'trunc_norm_init_std': hps_discriminator.trunc_norm_init_std,
-            'rand_unif_init_mag': hps_discriminator.rand_unif_init_mag}
+            'rand_unif_init_mag': hps_discriminator.rand_unif_init_mag,
+            'max_grad_norm': hps_discriminator.max_grad_norm}
 
         cla_cnn_batcher = CNN_ClaBatcher(hps_discriminator, vocab)
         cnn_classifier = CNN(config)

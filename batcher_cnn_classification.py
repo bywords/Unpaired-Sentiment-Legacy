@@ -119,9 +119,9 @@ class CNN_ClaBatcher(object):
         # File number? What does that mean? Why?
         # Why is it only applied to CNN?
         self.train_queue = self.fill_example_queue(
-            "train-original/*",filenumber = 2)
+            "train-original/*", filenumber=2)
         self.test_queue = self.fill_example_queue(
-            "test-original/*",filenumber = 5)
+            "test-original/*", filenumber=5)
 
         self.train_batch = self.create_batches(mode="train", shuffleis=True)
         self.test_batch = self.create_batches(mode="test", shuffleis=False)
